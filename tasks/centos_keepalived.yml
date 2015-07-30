@@ -9,5 +9,5 @@
   sysctl: name="net.ipv4.ip_nonlocal_bind" value=1 state=present reload=yes
 
 - name: centos | configuring keepalived
-  template: src=keepalived.conf.j2 dest=/etc/keepalived/keepalived.conf mode=0644 owner=root group=root backup=yes
+  template: src=etc/keepalived/keepalived.conf.j2 dest=/etc/keepalived/keepalived.conf mode=0644 owner=root group=root backup=yes
   notify: restart keepalived
