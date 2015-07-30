@@ -15,6 +15,7 @@ Role Variables
 config_keepalived: false
 keepalived_router_id: 55  #defines router id...must be unique per subnet
 keepalived_router_pri: 101  #defines router priority....each node must be different....best to define in host_vars
+keepalived_vip: 192.168.1.200  #defines the VIP to use
 keepalived_vip_int: '{{ ansible_default_ipv4.interface }}'  #defines interface to use for VIP
 notify_backup_script: backup.sh
 notify_fault_script: fault.sh
