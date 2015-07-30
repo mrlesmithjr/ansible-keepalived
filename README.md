@@ -13,6 +13,7 @@ Role Variables
 
 ````
 config_keepalived: false
+keepalived_router_id: 55  #defines router id...must be unique per subnet
 keepalived_vip_int: '{{ ansible_default_ipv4.interface }}'  #defines interface to use for VIP
 notify_backup_script: backup.sh
 notify_fault_script: fault.sh
