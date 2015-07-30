@@ -1,0 +1,11 @@
+---
+# tasks file for ansible-keepalived
+- include: debian_keepalived.yml
+  when: ansible_os_family == "Debian"
+
+- include: centos_keepalived.yml
+  when: ansible_os_family == "RedHat"
+
+- include: config_keepalived.yml
+  tags: [config_keepalived]
+  when: config_keepalived
