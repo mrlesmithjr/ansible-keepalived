@@ -8,3 +8,4 @@ keepalived_vip_int: '{{ ansible_default_ipv4.interface }}'  #defines interface t
 notify_backup_script: backup.sh
 notify_fault_script: fault.sh
 notify_master_script: master.sh
+sync_keepalived: false  #defines if keepalived should be synced when using with GlusterFS
