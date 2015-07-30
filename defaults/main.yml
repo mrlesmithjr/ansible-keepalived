@@ -1,6 +1,7 @@
 ---
 # defaults file for ansible-keepalived
 config_keepalived: false
+keepalived_vip_int: '{{ ansible_default_ipv4.interface }}'  #defines interface to use for VIP
 notify_backup_script: backup.sh
 notify_fault_script: fault.sh
 notify_master_script: master.sh
