@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Larry Smith Jr.
-  description: Installs keepalived role (ready for GlusterFS)
+  description: Installs keepalived role (GlusterFS support included)
   #company: your company (optional)
   # Some suggested licenses:
   # - BSD (default)
