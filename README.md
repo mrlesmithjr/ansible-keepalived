@@ -6,36 +6,57 @@ Installs keepalived http://www.keepalived.org/
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+None...unless using GlusterFS
 
 Role Variables
 --------------
 
 ````
+---
+# defaults file for ansible-keepalived
 config_keepalived: false
 keepalived_router_id: 55  #defines router id...must be unique per subnet
 keepalived_router_pri: 101  #defines router priority....each node must be different....best to define in host_vars
+keepalived_scripts_mnt: ''  #define if using GlusterFS
 keepalived_vip: 192.168.1.200  #defines the VIP to use
 keepalived_vip_int: '{{ ansible_default_ipv4.interface }}'  #defines interface to use for VIP
 notify_backup_script: backup.sh
 notify_fault_script: fault.sh
 notify_master_script: master.sh
+primary_gfs_server: ''  #define if using GlusterFS
+scripts_home: ''  #define if using GlusterFS
+secondary_gfs_server: ''  #define if using GlusterFS
 sync_keepalived: false  #defines if keepalived should be synced when using with GlusterFS
 ````
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+None...unless using GlusterFS
+
 
 Example Playbook
 ----------------
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: mrlesmithjr.keepalived }
+#### GitHub
+````
+- hosts: all
+  remote_user: remote
+  become: true
+  vars:
+  roles:
+    - role: ansible-keepalived
+  tasks:
+````
+#### Galaxy
+````
+- hosts: all
+  remote_user: remote
+  become: true
+  vars:
+  roles:
+    - role: mrlesmithjr.keepalived
+  tasks:
+````
 
 License
 -------
