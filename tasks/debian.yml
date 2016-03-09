@@ -12,13 +12,3 @@
     value: 1
     state: present
     reload: yes
-
-- name: debian_keepalived | configuring keepalived
-  template:
-    src: "etc/keepalived/keepalived.conf.j2"
-    dest: "/etc/keepalived/keepalived.conf"
-    owner: root
-    group: root
-    mode: 0644
-  notify:
-    - restart keepalived
