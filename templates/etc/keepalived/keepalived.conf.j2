@@ -1,5 +1,3 @@
-# {{ ansible_managed }}
-
 vrrp_script chk_haproxy {
    script "killall -0 haproxy"   # verify the pid existance
    interval 2                    # check every 2 seconds
