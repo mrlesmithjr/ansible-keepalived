@@ -1,7 +1,5 @@
 ---
 - hosts: localhost
   connection: local
-  vars:
-    keepalived_config: false
   roles:
     - ansible-keepalived
