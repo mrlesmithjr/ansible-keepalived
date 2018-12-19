@@ -1,6 +1,7 @@
 ---
 - hosts: localhost
-  remote_user: root
   connection: local
+  vars:
+    keepalived_config: false
   roles:
     - ansible-keepalived
