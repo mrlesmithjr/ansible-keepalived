@@ -17,6 +17,10 @@ keepalived_router_info: []
 #   vip_addresses:
 #     - 192.168.202.100
 #     - 192.168.202.101
+#   use_unicast: true
+#   # set unicasts settings in hostvars
+#   nopreempt: true
+#   auth_pass: password1234
 # - name: vrrp_2
 #   check_script:
 #     - name: chk_nginx
