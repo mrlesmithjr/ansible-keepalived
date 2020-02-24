@@ -35,3 +35,6 @@ keepalived_router_info:
   #   vip_int: "{{ ansible_eth1.device }}"
   #   vip_addresses:
   #     - 192.168.202.102
+
+# Defines whether sysctl settings should be applied
+keepalived_sysctl_config: false

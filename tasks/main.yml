@@ -9,6 +9,6 @@
 - include_tasks: service.yml
 
 - include_tasks: config.yml
-  when: keepalived_config|bool
 
 - include_tasks: sysctl.yml
+  when: keepalived_sysctl_config|bool
