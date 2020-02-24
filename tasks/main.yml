@@ -1,12 +1,14 @@
 ---
 # tasks file for ansible-keepalived
-- include: debian.yml
+- include_tasks: debian.yml
   when: ansible_os_family == "Debian"
 
-- include: redhat.yml
+- include_tasks: redhat.yml
   when: ansible_os_family == "RedHat"
 
-- include: config_keepalived.yml
-  tags:
-    - config_keepalived
-  when: keepalived_config
+- include_tasks: service.yml
+
+- include_tasks: config.yml
+
+- include_tasks: sysctl.yml
+  when: keepalived_sysctl_config|bool
