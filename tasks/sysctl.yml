@@ -1,0 +1,8 @@
+---
+- name: sysctl | allowing VIP to come up on both nodes
+  sysctl:
+    name: net.ipv4.ip_nonlocal_bind
+    value: "1"
+    state: present
+    reload: true
+  become: true

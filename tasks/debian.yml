@@ -1,16 +1,8 @@
 ---
-- name: debian_keepalived | installing packages
+- name: debian | installing packages
   apt:
-    name: ['keepalived']
+    name: keepalived
     state: present
   become: true
   register: result
   until: result is succeeded
-
-- name: debian_keepalived | allowing VIP to come up on both nodes
-  sysctl:
-    name: net.ipv4.ip_nonlocal_bind
-    value: 1
-    state: present
-    reload: true
-  become: true

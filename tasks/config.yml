@@ -1,5 +1,5 @@
 ---
-- name: config_keepalived | configuring keepalived
+- name: config | configuring keepalived
   template:
     src: etc/keepalived/keepalived.conf.j2
     dest: /etc/keepalived/keepalived.conf

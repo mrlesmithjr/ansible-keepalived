@@ -1,0 +1,7 @@
+---
+- name: service | enabling keepalived on boot and start
+  service:
+    name: keepalived
+    state: started
+    enabled: true
+  become: true

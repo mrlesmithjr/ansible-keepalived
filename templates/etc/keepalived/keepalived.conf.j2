@@ -1,3 +1,4 @@
+{{ ansible_managed|comment }}
 {% if keepalived_router_info is defined %}
 {%   for item in keepalived_router_info %}
 {%     if item.check_script is defined %}
