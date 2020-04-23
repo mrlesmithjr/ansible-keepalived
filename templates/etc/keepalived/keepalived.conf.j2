@@ -22,7 +22,9 @@ vrrp_instance {{ item.name }} {
   state BACKUP
   priority {{ item.router_pri_backup }}
 {%       endif %}
-
+{%	if use_vmac %}
+  use_vmac
+{%	endif %}
   virtual_router_id {{ item.router_id }}
   virtual_ipaddress {
 {%       for ip in item.vip_addresses %}

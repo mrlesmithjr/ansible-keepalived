@@ -14,6 +14,8 @@ keepalived_router_info:
   #   router_id: 50
   #   router_pri_backup: 100
   #   router_pri_master: 150
+  #   # Enables VIP's mac address to follow the VIP
+  #   use_vmac: true
   #   vip_int: "{{ ansible_eth1.device }}"
   #   vip_addresses:
   #     - 192.168.202.100
