@@ -16,3 +16,14 @@
   register: result
   until: result is succeeded
   when: ansible_distribution == "Fedora"
+
+- name: redhat | installing keepalived
+  dnf:
+    name: keepalived
+    state: present
+  become: true
+  register: result
+  until: result is succeeded
+  when: 
+    - ansible_distribution != "Fedora"
+    - ansible_distribution_major_version == "8"
