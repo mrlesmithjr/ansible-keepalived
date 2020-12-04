@@ -15,17 +15,17 @@ Ansible role to install/configure KeepAliveD
 ## Requirements
 
 For any required Ansible roles, review:
-[requirements.yml](requirements.yml)
+[requirements.yml](https://github.com/mrlesmithjr/ansible-keepalived/blob/master/requirements.yml)
 
 ## Role Variables
 
-[defaults/main.yml](defaults/main.yml)
+[defaults/main.yml](https://github.com/mrlesmithjr/ansible-keepalived/blob/master/defaults/main.yml)
 
 ## Dependencies
 
 ## Example Playbook
 
-[playbook.yml](playbook.yml)
+[playbook.yml](https://github.com/mrlesmithjr/ansible-keepalived/blob/master/playbook.yml)
 
 ## License
 
