@@ -1,7 +1,19 @@
 ---
 - name: Converge
   hosts: all
+  vars:
+    keepalived_config: true
+    keepalived_sysctl_config: true
+    keepalived_router_info:
+      - name: vrrp_1
+        master_node: "{{ inventory_hostname }}"
+        router_id: 50
+        router_pri_backup: 100
+        router_pri_master: 150
+        vip_int: "{{ ansible_default_ipv4.interface }}"
+        vip_addresses:
+          - 192.0.2.100
   tasks:
     - name: Include ansible-keepalived
       include_role:
-        name: ansible-keepalived
+        name: mrlesmithjr.keepalived
